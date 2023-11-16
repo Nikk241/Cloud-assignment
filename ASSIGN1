@@ -1,0 +1,15 @@
+CREATE TABLE dataset1 AS
+SELECT *
+FROM string_table
+WHERE LOWER(Summary) LIKE '%ham%' OR LOWER(Text) LIKE '%ham%';
+CREATE TABLE Dataset2 AS
+SELECT *
+FROM string_table
+WHERE LOWER(Summary) LIKE '%spam%' OR LOWER(Text) LIKE '%spam%';
+SELECT * FROM Amazon_Data LIMIT 5;
+
+SELECT COUNT(*) FROM Amazon_Data WHERE UserId = ' ';
+
+SELECT COUNT(*) FROM Amazon_Data WHERE ProductId = ' ';
+gsutil ls gs://nikhil_24/datafinal
+beeline -u jdbc:hive2://localhost:10000/default -n nikhilk2412000@new-data-cluster-m -d org.apache.hive.jdbc.HiveDriver
